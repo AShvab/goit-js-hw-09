@@ -9,16 +9,16 @@ let timerId = null;
 function handleBtnStartClick (){
     disableBtn(btnStart);
     enableBtn(btnStop);
-    
+
     timerId = setInterval(() => {
         const color = getRandomHexColor();
         document.body.style.backgroundColor = color;
     }, 1000);
 };
 
-function handleBtnStopClick(){
-    enableBtn(btnStart);
+function handleBtnStopClick(){    
     disableBtn(btnStop);
+    enableBtn(btnStart);
 
     clearInterval(timerId);
 };
